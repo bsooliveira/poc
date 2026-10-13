@@ -1,0 +1,28 @@
+[Unit]
+Description=SimplFAQ - API e processamento
+Requires=simplfaq-ollama.service
+After=simplfaq-ollama.service
+
+[Container]
+Image=localhost/simplfaq-api:poc
+ContainerName=simplfaq-api
+Network=simplfaq.network
+NetworkAlias=simplfaq-api
+Volume=simplfaq-data.volume:/data:U
+EnvironmentFile=%h/.config/simplfaq/app.env
+NoNewPrivileges=true
+DropCapability=ALL
+ReadOnly=true
+Tmpfs=/tmp:rw,size=512m,mode=1777
+HealthCmd=python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health/ready')"
+HealthInterval=30s
+HealthTimeout=5s
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+TimeoutStopSec=30
+MemoryMax=5G
+
+[Install]
+WantedBy=default.target

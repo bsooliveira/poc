@@ -1,0 +1,50 @@
+{
+  "provider": "ollama",
+  "model": "qwen2.5:1.5b",
+  "elapsed_seconds": 395,
+  "sections": 12,
+  "items": 0,
+  "sources": 3,
+  "statuses": {
+    "resumo": "insufficient_information",
+    "cronograma": "insufficient_information",
+    "estrutura": "insufficient_information",
+    "depositaria": "insufficient_information",
+    "direitos": "insufficient_information",
+    "contratos": "not_applicable",
+    "precificacao": "insufficient_information",
+    "excecoes": "insufficient_information",
+    "falhas": "insufficient_information",
+    "tributacao": "insufficient_information",
+    "exemplos": "insufficient_information",
+    "contatos": "insufficient_information"
+  },
+  "metrics": {
+    "chunk_coverage": 0.0,
+    "total_chunks": 3,
+    "used_chunks": 0,
+    "source_coverage": 0.0,
+    "grounded_rate": 0.0,
+    "equivalence_rate": 0.0
+  },
+  "deterministic_errors": {},
+  "gaps": [
+    "Resumo da operação: informação insuficiente",
+    "Cronograma: informação insuficiente",
+    "Estrutura do evento e ativos envolvidos: informação insuficiente",
+    "Tratamento operacional na Central Depositária: informação insuficiente",
+    "Exercício e manifestação de direitos: informação insuficiente",
+    "Precificação e modelos teóricos: informação insuficiente",
+    "Fluxos de exceção e restrições: informação insuficiente",
+    "Falhas, recomposição e recompras: informação insuficiente",
+    "Tributação: informação insuficiente",
+    "Exemplos práticos e simulações: informação insuficiente",
+    "Contatos operacionais: informação insuficiente",
+    "Fonte sem citação na FAQ: evento-ficticio.docx",
+    "Fonte sem citação na FAQ: financeiro-ficticio.xlsx",
+    "Fonte sem citação na FAQ: reuniao-ficticia.txt"
+  ],
+  "duplicates_consolidated": 0,
+  "all_pending": true,
+  "limitations": "Demonstração com dados fictícios. Não é validação normativa de um evento real. Modelo local e verificador exigem revisão humana."
+}

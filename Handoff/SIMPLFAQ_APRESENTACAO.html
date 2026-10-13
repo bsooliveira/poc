@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SimplFAQ — Apresentação e Arquitetura</title>
+<style>
+:root{
+  --bg:#0b1220; --panel:#111a2b; --panel2:#162238; --text:#edf3ff; --muted:#a9b7d0;
+  --accent:#4da3ff; --accent2:#7bdcb5; --warn:#ffcc66; --danger:#ff7b7b; --border:#263650;
+}
+*{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#09101b,#0b1220 30%,#0d1626);
+color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.45}
+header{position:sticky;top:0;z-index:20;background:rgba(9,16,27,.92);backdrop-filter:blur(12px);
+border-bottom:1px solid var(--border);padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:800;letter-spacing:.2px}.brand span{color:var(--accent)}
+nav{display:flex;gap:8px;flex-wrap:wrap} nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px}
+nav a:hover{background:#132038;color:white}
+main{max-width:1200px;margin:auto;padding:28px 20px 80px}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:stretch}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.22)}
+h1{font-size:44px;line-height:1.05;margin:0 0 14px} h2{margin-top:0;font-size:28px} h3{margin-bottom:8px}
+p{color:var(--muted)} .kicker{color:var(--accent2);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.badge{border:1px solid var(--border);background:#0d1728;padding:8px 11px;border-radius:999px;color:#dce8ff;font-size:13px}
+.grid{display:grid;gap:18px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+section{margin-top:30px;scroll-margin-top:80px}
+.flow{display:flex;gap:12px;align-items:center;overflow:auto;padding-bottom:8px}
+.step{min-width:180px;background:#0e1829;border:1px solid var(--border);border-radius:14px;padding:16px}
+.arrow{font-size:24px;color:var(--accent)}
+.sources .card{min-height:190px}
+.priority{display:flex;flex-direction:column;gap:8px}.priority div{display:flex;gap:10px;align-items:center;background:#0e1829;border:1px solid var(--border);border-radius:12px;padding:10px 12px}
+.num{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#07101c;font-weight:800}
+.arch{display:grid;grid-template-columns:1fr;gap:14px}
+.arch-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.arch-box{background:#0e1829;border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center}
+.arch-box strong{display:block;margin-bottom:6px}
+.small{font-size:13px;color:var(--muted)}
+.callout{border-left:4px solid var(--accent2);padding:14px 16px;background:#0e1829;border-radius:10px}
+.alert{border-left-color:var(--warn)}
+.togglebar{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+button{background:#13223a;color:white;border:1px solid var(--border);padding:9px 13px;border-radius:10px;cursor:pointer}
+button.active,button:hover{background:#183052;border-color:#365276}
+.hidden{display:none}
+.footer{margin-top:40px;color:#7f90ad;font-size:12px;text-align:center}
+@media(max-width:900px){.hero,.g3,.g2,.arch-row{grid-template-columns:1fr}h1{font-size:34px}.flow{flex-direction:column;align-items:stretch}.arrow{transform:rotate(90deg);text-align:center}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Simpl<span>FAQ</span></div>
+  <nav>
+    <a href="#visao">Visão</a><a href="#fluxo">Fluxo</a><a href="#rag">RAG</a><a href="#arquitetura">Arquitetura</a><a href="#seguranca">Segurança</a><a href="#operacao">Operação</a>
+  </nav>
+</header>
+
+<main>
+<section id="visao" class="hero">
+  <div class="card">
+    <div class="kicker">Eventos corporativos • B3</div>
+    <h1>Geração automatizada de FAQs bilíngues com rastreabilidade e revisão humana</h1>
+    <p>O SimplFAQ transforma múltiplas fontes de um evento corporativo em um documento estruturado de perguntas e respostas em português e inglês, gerado no mesmo ciclo e revisado por humanos antes da publicação.</p>
+    <div class="badges">
+      <span class="badge">PT + EN simultâneos</span>
+      <span class="badge">RAG</span>
+      <span class="badge">B3 GPT / OpenAI</span>
+      <span class="badge">Human-in-the-loop</span>
+      <span class="badge">VM + Podman</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="kicker">Objetivo</div>
+    <h2>Reduzir esforço manual sem perder governança</h2>
+    <p>Hoje, diferentes áreas respondem por seus próprios domínios e um humano consolida o documento. O SimplFAQ automatiza a preparação, mantendo evidências, validações e aprovação humana obrigatória.</p>
+    <div class="callout">O sistema produz uma primeira versão altamente avançada — não publica sozinho.</div>
+  </div>
+</section>
+
+<section id="fluxo">
+  <h2>Fluxo fim a fim</h2>
+  <div class="flow">
+    <div class="step"><strong>1. Upload flexível</strong><p>2, 3 ou vários arquivos por evento, sem quantidade fixa.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><strong>2. Ingestão</strong><p>Extração, normalização, chunking e metadados.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><strong>3. RAG</strong><p>Recupera evidências, histórico e padrão linguístico.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><strong>4. B3 GPT</strong><p>Classifica, gera, detecta lacunas e conflitos.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><strong>5. Validação</strong><p>Groundedness, equivalência PT/EN e regras.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><strong>6. Revisão humana</strong><p>Aprovação antes de envio ao negócio.</p></div>
+    <div class="arrow">→</div>
+    <div class="step"><strong>7. Feedback</strong><p>FAQ aprovada volta ao histórico do RAG.</p></div>
+  </div>
+</section>
+
+<section id="rag">
+  <h2>Como o RAG organiza o conhecimento</h2>
+  <div class="grid g3 sources">
+    <div class="card">
+      <div class="kicker">Fonte 1</div><h3>Evento atual</h3>
+      <p>Fato relevante, documentos oficiais, dados estruturados e transcrição da reunião. É a principal fonte factual.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Fonte 2</div><h3>FAQs históricas aprovadas</h3>
+      <p>Casos semelhantes, cobertura temática, estrutura e exemplos aprovados. Nunca substituem a evidência do evento atual.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">Fonte 3</div><h3>Padrão linguístico</h3>
+      <p>Glossário, terminologia oficial, guias de estilo e exemplos de inglês aprovados pela B3.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h3>Prioridade de fontes</h3>
+    <div class="priority">
+      <div><span class="num">1</span> Documento/fonte oficial do evento atual</div>
+      <div><span class="num">2</span> Dados estruturados do evento atual</div>
+      <div><span class="num">3</span> Transcrição da reunião atual</div>
+      <div><span class="num">4</span> Regras internas aplicáveis</div>
+      <div><span class="num">5</span> FAQs históricas aprovadas</div>
+      <div><span class="num">6</span> Referências linguísticas</div>
+    </div>
+  </div>
+</section>
+
+<section id="arquitetura">
+  <h2>Arquitetura do MVP</h2>
+  <div class="togglebar">
+    <button class="active" onclick="showArch('func',this)">Visão funcional</button>
+    <button onclick="showArch('tech',this)">Visão técnica</button>
+  </div>
+
+  <div id="func" class="arch">
+    <div class="arch-row">
+      <div class="arch-box"><strong>Usuário</strong><span class="small">Upload, acompanhamento e revisão</span></div>
+      <div class="arch-box"><strong>Front-end</strong><span class="small">React + TypeScript + Vite</span></div>
+      <div class="arch-box"><strong>Back-end</strong><span class="small">Python + FastAPI</span></div>
+      <div class="arch-box"><strong>IA / RAG</strong><span class="small">Índice local + B3 GPT/OpenAI</span></div>
+      <div class="arch-box"><strong>Resultado</strong><span class="small">FAQ PT/EN + fontes + revisão</span></div>
+    </div>
+  </div>
+
+  <div id="tech" class="arch hidden">
+    <div class="arch-row">
+      <div class="arch-box"><strong>Nginx</strong><span class="small">HTTPS e reverse proxy</span></div>
+      <div class="arch-box"><strong>Podman</strong><span class="small">Containers da aplicação</span></div>
+      <div class="arch-box"><strong>Quadlet/systemd</strong><span class="small">Lifecycle, auto-start e restart</span></div>
+      <div class="arch-box"><strong>Azure DevOps</strong><span class="small">CI/CD e rollback</span></div>
+      <div class="arch-box"><strong>VMs existentes</strong><span class="small">Pré-produção e produção</span></div>
+    </div>
+  </div>
+
+  <div class="callout alert" style="margin-top:16px">Premissa oficial do MVP: usar somente as VMs já existentes. Nenhum App Service, Static Web Apps ou novo recurso Azure é obrigatório.</div>
+</section>
+
+<section id="seguranca">
+  <h2>Segurança e governança</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Autenticação e autorização</h3>
+      <p>Login corporativo com Entra ID e acesso controlado por grupo.</p>
+    </div>
+    <div class="card">
+      <h3>Auditoria</h3>
+      <p>Registrar usuário, horário, evento, arquivos, ações, geração, revisão, aprovação e versão.</p>
+    </div>
+    <div class="card">
+      <h3>Guardrails</h3>
+      <p>Sem evidência suficiente, não inventar. Conflitos e baixa confiança devem exigir revisão humana.</p>
+    </div>
+    <div class="card">
+      <h3>Rastreabilidade</h3>
+      <p>Cada resposta deve manter referência aos chunks/fontes usados na geração.</p>
+    </div>
+  </div>
+</section>
+
+<section id="operacao">
+  <h2>Operação e evolução</h2>
+  <div class="grid g3">
+    <div class="card"><h3>Deploy simples</h3><p>Pipeline Azure DevOps publica versão na VM, atualiza containers Podman e permite rollback.</p></div>
+    <div class="card"><h3>Suporte enxuto</h3><p>Arquitetura modular para facilitar correções com auxílio de IA, sem microserviços desnecessários.</p></div>
+    <div class="card"><h3>Evolução segura</h3><p>Após validação do hackathon, é possível migrar componentes para serviços gerenciados sem reescrever o produto.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Resumo da proposta</h2>
+  <div class="card">
+    <p><strong>SimplFAQ</strong> = múltiplos documentos + RAG + B3 GPT/OpenAI + geração PT/EN simultânea + validações + revisão humana + feedback de FAQs aprovadas.</p>
+    <p>O foco é entregar velocidade, padronização, auditabilidade e redução de esforço manual, preservando governança e controle humano.</p>
+  </div>
+</section>
+
+<div class="footer">SimplFAQ — visão de produto e arquitetura do MVP</div>
+</main>
+
+<script>
+function showArch(id, btn){
+  document.getElementById('func').classList.add('hidden');
+  document.getElementById('tech').classList.add('hidden');
+  document.getElementById(id).classList.remove('hidden');
+  document.querySelectorAll('.togglebar button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+FROM localhost/simplfaq-api:dependencies
+USER root
+RUN pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+COPY requirements-training.txt requirements-training.lock ./
+RUN pip install -r requirements-training.lock
+COPY app ./app
+COPY tests ./tests
+USER app
+ENV DATA_DIR=/data
+EXPOSE 8000
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1", "--no-server-header"]

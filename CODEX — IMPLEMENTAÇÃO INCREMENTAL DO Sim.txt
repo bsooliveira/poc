@@ -1,0 +1,55 @@
+CODEX — IMPLEMENTAÇÃO INCREMENTAL DO SimpliFAQ (PROMPT ATUALIZADO) Missão
+Faça uma REVISÃO GERAL do repositório SimpliFAQ EXISTENTE e implemente incrementalmente os requisitos abaixo. NÃO recrie o projeto. O SimpliFAQ gera documentos Word de FAQ bilíngue PT-BR/EN para eventos corporativos, a partir de documento do evento, arquivo financeiro e transcrição de reunião. O fluxo-alvo concentra elaboração e revisão em uma pessoa com auxílio de IA, em vez de cada área redigir sua parte. Não é chatbot de perguntas avulsas.
+
+Estado atual relatado — validar no repositório
+Último relato: 34 testes passando (30 backend, 4 frontend), envolvendo ingestão, embeddings multilíngues, geração PT/EN, exportação Word, LoRA, backup/restore/rollback. Falha anterior ‘Failed to fetch’ relacionada ao WSL parando por inatividade foi corrigida. Dois eventos e duas FAQs aguardavam revisão, nenhuma aprovada. Problemas conhecidos: perguntas redundantes e classificação temática incorreta. Rode a suíte real, documente divergências e preserve dados e funções existentes.
+
+FONTE DA VERDADE: template textual obrigatório
+O usuário não pode compartilhar fotos do template com o Codex. Portanto, NÃO exija fotos. A especificação textual abaixo é a fonte da verdade inicial para estrutura, ordem, validação, interface e exportação Word. Transforme-a em UM arquivo versionado legível por máquina; não duplique títulos hardcoded em serviços distintos.
+
+Seções introdutórias:
+A. Resumo da operação
+B. Cronograma
+
+Dez temas, na ordem:
+
+Estrutura do evento e ativos envolvidos
+Tratamento operacional na Central Depositária
+Exercício e manifestação de direitos
+Contratos de empréstimo, contratos a termo, opções e derivativos
+Precificação e modelos teóricos
+Fluxos de exceção e restrições
+Falhas, recomposição e recompras
+Tributação
+Exemplos práticos e simulações
+Contatos operacionais
+Essa lista representa o conteúdo identificado em três fotos do template público, mas NÃO constitui transcrição literal de eventuais subitens ou instruções miúdas. Não invente subitens ou regras não especificadas. Todas as seções devem ser avaliadas em cada evento; diferencie aplicável, não aplicável e informação insuficiente. Mantenha a estrutura do documento mesmo quando o conteúdo precisar ser marcado para revisão; não invente respostas, valores, datas, tributos, contatos ou regras.
+
+NOVO REQUISITO: manuais operacionais públicos da B3
+Incorpore à base RAG os seguintes documentos normativos públicos, mantendo as fontes e versões rastreáveis:
+
+Manual de Procedimentos Operacionais da Câmara B3, disponível na página oficial:
+https://www.b3.com.br/pt_br/regulacao/estrutura-normativa/regulamentos-e-manuais/compensacao-liquidacao-e-gerenciamento-de-riscos.htm
+PDF oficial identificado em pesquisa (versão datada de abril de 2026, NÃO presumir ser a mais recente):
+https://www.b3.com.br/data/files/46/95/2F/DE/A0BAD9100A63AAD9AC094EA8/MPO%20da%20Camara%20B3.pdf
+A página indicava versão em vigor em 22/06/2026, mas confira a vigência no momento da ingestão.
+
+Manual de Procedimentos Operacionais da Central Depositária de Renda Variável B3, localizado na mesma estrutura de regulamentos e manuais. A versão mencionada na pesquisa foi 02/01/2026; verifique versão, link exato e vigência na página oficial antes de ingerir. Não invente URL de PDF.
+
+A Câmara B3 é relevante para alocação, posições, compensação e liquidação; a Central Depositária, para custódia e tratamento de eventos corporativos. Não trate procedimentos de uma como se fossem da outra.
+
+Requisitos RAG: reutilize embeddings/indexação existentes quando possível; extraia texto com referência de página/seção, incluindo tabelas quando viável; registre título, sistema, URL, hash, versão, vigência, data de ingestão e status. Faça chunking contextual, recuperação com filtro por sistema e versão, atualização/desativação de documentos antigos, e vinculação de cada afirmação a trecho específico. Diferencie documento do evento, arquivo financeiro, transcrição e normativos gerais. Se fontes divergirem, sinalize conflito para revisão humana, sem resolver silenciosamente. Não use documentos internos, restritos ou dados reais em testes. Se acesso/download falhar, registre impedimento e implemente com fixtures sintéticas, sem fingir ingestão concluída.
+
+Pipeline e qualidade
+Ingestão -> classificação do evento -> seleção de evidências -> avaliação das 12 seções -> geração PT-BR -> versão EN semanticamente equivalente -> checagem de fontes, redundância, classificação, consistência de cronograma -> revisão humana -> exportação Word.
+Cada pergunta/resposta: identificador estável, seção/tema, idioma, estado, evidências (fonte, seção, página, versão), sinalização de lacunas e histórico de revisão. Evite perguntas duplicadas e afirmações não fundamentadas. Preserve aprovação humana; nenhuma FAQ deve ser aprovada automaticamente. UI deve mostrar evidências e pendências. Exportação Word deve seguir exatamente a estrutura textual especificada, em PT/EN.
+
+Método de execução
+Audite backend, frontend, banco, migrations, APIs, RAG, embeddings, LoRA, Word, testes, backups e documentação.
+Execute testes atuais, registre baseline real e faça matriz de lacunas.
+Planeje mudanças de baixo risco; preserve eventos, FAQs, backups e rollback.
+Implemente definição única do template e integração dos dois manuais públicos, usando a infraestrutura existente.
+Adicione testes unitários, integração e ponta a ponta: estrutura/ordem; aplicabilidade; documentos ausentes; fontes divergentes; versões obsoletas; separação Câmara/Depositária; deduplicação; classificação; consistência PT/EN; citações; revisão; Word; regressão dos 34 testes.
+Gere amostra de FAQ com fixtures sintéticas para avaliar qualidade além do simples ‘testes passaram’.
+Entregue diagnóstico, matriz requisito->código->teste, mudanças feitas, evidências dos testes, instruções de atualização dos manuais, limitações e pendências.
+Não introduza custos ou dependências grandes sem justificar. Não apague dados. Se uma decisão de negócio não estiver especificada, sinalize-a; não invente. A especificação textual substitui a necessidade de enviar fotografias ao Codex.

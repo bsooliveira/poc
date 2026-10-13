@@ -1,0 +1,71 @@
+{
+  "provider": "ollama",
+  "model": "qwen2.5:1.5b",
+  "elapsed_seconds": 1916,
+  "sections": 12,
+  "items": 5,
+  "sources": 3,
+  "statuses": {
+    "resumo": "applicable",
+    "cronograma": "applicable",
+    "estrutura": "applicable",
+    "depositaria": "insufficient_information",
+    "direitos": "insufficient_information",
+    "contratos": "not_applicable",
+    "precificacao": "applicable",
+    "excecoes": "insufficient_information",
+    "falhas": "insufficient_information",
+    "tributacao": "insufficient_information",
+    "exemplos": "insufficient_information",
+    "contatos": "insufficient_information"
+  },
+  "metrics": {
+    "chunk_coverage": 0.6666666666666666,
+    "total_chunks": 3,
+    "used_chunks": 2,
+    "source_coverage": 0.6666666666666667,
+    "grounded_rate": 0.0,
+    "equivalence_rate": 0.0
+  },
+  "deterministic_errors": {
+    "00bff4be-8426-5640-bfa4-57fafc41b468": [
+      "Afirmações PT/EN não cobrem integralmente a resposta; revise cada trecho e suas fontes",
+      "Números/datas divergem entre afirmações PT e EN",
+      "Afirmação contém números ausentes no trecho especificamente citado"
+    ],
+    "5393d942-ad73-5e71-879a-01e0afcfc818": [
+      "Afirmações PT/EN não cobrem integralmente a resposta; revise cada trecho e suas fontes",
+      "A resposta contém números ausentes nas fontes citadas"
+    ],
+    "b9fbe2eb-ec4c-5669-acde-cab2879bcd4f": [
+      "Afirmações PT/EN não cobrem integralmente a resposta; revise cada trecho e suas fontes"
+    ],
+    "2a4fba93-615e-59ea-8b9d-921a04375431": [
+      "Afirmações PT/EN não cobrem integralmente a resposta; revise cada trecho e suas fontes",
+      "Números/datas divergem entre PT e EN"
+    ],
+    "cb399514-250b-5789-aeeb-d35ca794ca75": [
+      "Afirmações PT/EN não cobrem integralmente a resposta; revise cada trecho e suas fontes",
+      "Números/datas divergem entre afirmações PT e EN",
+      "Afirmação contém números ausentes no trecho especificamente citado"
+    ]
+  },
+  "gaps": [
+    "Sem normativo vigente recuperado para Estrutura do evento e ativos envolvidos",
+    "Avaliação do modelo sem citação pertinente em Contratos de empréstimo, contratos a termo, opções e derivativos; indicação nas fontes mantida para revisão.",
+    "Avaliação do modelo sem citação pertinente em Precificação e modelos teóricos; indicação nas fontes mantida para revisão.",
+    "Sem normativo vigente recuperado para Precificação e modelos teóricos",
+    "Pergunta repetida com respostas diferentes; revisar Precificação e modelos teóricos",
+    "Tratamento operacional na Central Depositária: informação insuficiente",
+    "Exercício e manifestação de direitos: informação insuficiente",
+    "Fluxos de exceção e restrições: informação insuficiente",
+    "Falhas, recomposição e recompras: informação insuficiente",
+    "Tributação: informação insuficiente",
+    "Exemplos práticos e simulações: informação insuficiente",
+    "Contatos operacionais: informação insuficiente",
+    "Fonte sem citação na FAQ: reuniao-ficticia.txt"
+  ],
+  "duplicates_consolidated": 5,
+  "all_pending": true,
+  "limitations": "Demonstração com dados fictícios. Não é validação normativa de um evento real. Modelo local e verificador exigem revisão humana."
+}

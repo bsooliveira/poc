@@ -1,0 +1,25 @@
+[Unit]
+Description=SimplFAQ - interface React e proxy Nginx
+Requires=simplfaq-api.service
+After=simplfaq-api.service
+
+[Container]
+Image=localhost/simplfaq-web:poc
+ContainerName=simplfaq-web
+Network=simplfaq.network
+PublishPort=127.0.0.1:8080:8080
+NoNewPrivileges=true
+DropCapability=ALL
+ReadOnly=true
+Tmpfs=/tmp:rw,size=64m,mode=1777
+HealthCmd=wget -q -O /dev/null http://127.0.0.1:8080/api/health/ready
+HealthInterval=30s
+HealthTimeout=5s
+
+[Service]
+Restart=always
+TimeoutStartSec=120
+MemoryMax=256M
+
+[Install]
+WantedBy=default.target

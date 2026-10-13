@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.docx binary
+*.sh text eol=lf
+*.py text eol=lf
+*.container text eol=lf
+*.network text eol=lf
+*.volume text eol=lf
+*.conf text eol=lf
+*.ps1 text eol=crlf

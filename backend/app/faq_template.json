@@ -1,0 +1,233 @@
+{
+    "version":  "corporate-faq-1.0",
+    "source":  "Especificação textual autorizada pelo usuário em CODEX — IMPLEMENTAÇÃO INCREMENTAL DO Sim.txt; sem subitens inferidos.",
+    "states":  {
+                   "applicable":  {
+                                      "pt":  "Aplicável",
+                                      "en":  "Applicable"
+                                  },
+                   "not_applicable":  {
+                                          "pt":  "Não aplicável",
+                                          "en":  "Not applicable"
+                                      },
+                   "insufficient_information":  {
+                                                    "pt":  "Informação insuficiente",
+                                                    "en":  "Insufficient information"
+                                                }
+               },
+    "sections":  [
+                     {
+                         "number":  "A",
+                         "id":  "resumo",
+                         "title_pt":  "Resumo da operação",
+                         "title_en":  "Operation summary",
+                         "systems":  [
+
+                                     ],
+                         "keywords":  [
+                                          "operação",
+                                          "evento",
+                                          "ativos",
+                                          "operation",
+                                          "event"
+                                      ]
+                     },
+                     {
+                         "number":  "B",
+                         "id":  "cronograma",
+                         "title_pt":  "Cronograma",
+                         "title_en":  "Schedule",
+                         "systems":  [
+
+                                     ],
+                         "keywords":  [
+                                          "cronograma",
+                                          "data",
+                                          "prazo",
+                                          "horário",
+                                          "schedule",
+                                          "date",
+                                          "deadline",
+                                          "time"
+                                      ]
+                     },
+                     {
+                         "number":  "1",
+                         "id":  "estrutura",
+                         "title_pt":  "Estrutura do evento e ativos envolvidos",
+                         "title_en":  "Event structure and assets involved",
+                         "systems":  [
+                                         "depositaria"
+                                     ],
+                         "keywords":  [
+                                          "estrutura",
+                                          "ativo",
+                                          "ações",
+                                          "emissor",
+                                          "structure",
+                                          "asset",
+                                          "shares",
+                                          "issuer"
+                                      ]
+                     },
+                     {
+                         "number":  "2",
+                         "id":  "depositaria",
+                         "title_pt":  "Tratamento operacional na Central Depositária",
+                         "title_en":  "Operational treatment at the Central Depository",
+                         "systems":  [
+                                         "depositaria"
+                                     ],
+                         "keywords":  [
+                                          "custódia",
+                                          "depositária",
+                                          "depositaria",
+                                          "carteira",
+                                          "depository",
+                                          "depositary",
+                                          "custody"
+                                      ]
+                     },
+                     {
+                         "number":  "3",
+                         "id":  "direitos",
+                         "title_pt":  "Exercício e manifestação de direitos",
+                         "title_en":  "Exercise and expression of rights",
+                         "systems":  [
+                                         "depositaria",
+                                         "camara"
+                                     ],
+                         "keywords":  [
+                                          "direito",
+                                          "exercício",
+                                          "subscrição",
+                                          "manifestação",
+                                          "exercise",
+                                          "rights",
+                                          "subscription"
+                                      ]
+                     },
+                     {
+                         "number":  "4",
+                         "id":  "contratos",
+                         "title_pt":  "Contratos de empréstimo, contratos a termo, opções e derivativos",
+                         "title_en":  "Securities lending, forward contracts, options and derivatives",
+                         "systems":  [
+                                         "camara"
+                                     ],
+                         "keywords":  [
+                                          "empréstimo",
+                                          "termo",
+                                          "opções",
+                                          "derivativos",
+                                          "lending",
+                                          "forward",
+                                          "options",
+                                          "derivatives"
+                                      ]
+                     },
+                     {
+                         "number":  "5",
+                         "id":  "precificacao",
+                         "title_pt":  "Precificação e modelos teóricos",
+                         "title_en":  "Pricing and theoretical models",
+                         "systems":  [
+                                         "camara"
+                                     ],
+                         "keywords":  [
+                                          "preço",
+                                          "precificação",
+                                          "modelo teórico",
+                                          "price",
+                                          "pricing",
+                                          "theoretical model"
+                                      ]
+                     },
+                     {
+                         "number":  "6",
+                         "id":  "excecoes",
+                         "title_pt":  "Fluxos de exceção e restrições",
+                         "title_en":  "Exception flows and restrictions",
+                         "systems":  [
+                                         "camara",
+                                         "depositaria"
+                                     ],
+                         "keywords":  [
+                                          "exceção",
+                                          "restrição",
+                                          "bloqueio",
+                                          "exception",
+                                          "restriction",
+                                          "block"
+                                      ]
+                     },
+                     {
+                         "number":  "7",
+                         "id":  "falhas",
+                         "title_pt":  "Falhas, recomposição e recompras",
+                         "title_en":  "Failures, replenishment and buy-ins",
+                         "systems":  [
+                                         "camara"
+                                     ],
+                         "keywords":  [
+                                          "falha",
+                                          "recomposição",
+                                          "recompra",
+                                          "failure",
+                                          "replenishment",
+                                          "buy-in"
+                                      ]
+                     },
+                     {
+                         "number":  "8",
+                         "id":  "tributacao",
+                         "title_pt":  "Tributação",
+                         "title_en":  "Taxation",
+                         "systems":  [
+                                         "camara",
+                                         "depositaria"
+                                     ],
+                         "keywords":  [
+                                          "tributação",
+                                          "imposto",
+                                          "tributo",
+                                          "fiscal",
+                                          "tax",
+                                          "taxation"
+                                      ]
+                     },
+                     {
+                         "number":  "9",
+                         "id":  "exemplos",
+                         "title_pt":  "Exemplos práticos e simulações",
+                         "title_en":  "Practical examples and simulations",
+                         "systems":  [
+                                         "camara",
+                                         "depositaria"
+                                     ],
+                         "keywords":  [
+                                          "exemplo",
+                                          "simulação",
+                                          "example",
+                                          "simulation"
+                                      ]
+                     },
+                     {
+                         "number":  "10",
+                         "id":  "contatos",
+                         "title_pt":  "Contatos operacionais",
+                         "title_en":  "Operational contacts",
+                         "systems":  [
+
+                                     ],
+                         "keywords":  [
+                                          "contato",
+                                          "email",
+                                          "e-mail",
+                                          "telefone",
+                                          "contact",
+                                          "phone"
+                                      ]
+                     }
+                 ]
+}

@@ -1,0 +1,7 @@
+FROM localhost/simplfaq-api:base
+USER root
+RUN apt-get update && apt-get install --no-install-recommends -y libreoffice-writer poppler-utils fonts-crosextra-carlito && rm -rf /var/lib/apt/lists/*
+RUN pip install pdf2image==1.17.0
+USER app
+ENV HOME=/tmp/qa-home
+CMD ["python", "--version"]
