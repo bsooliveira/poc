@@ -1,4 +1,4 @@
-# SimplFAQ — implementação incremental e revisão final
+# SimpliFAQ — implementação incremental e revisão final
 
 Data de referência: 12/10/2026, America/Sao_Paulo. Preparação da POC para 13/10/2026. Este relatório complementa os registros históricos `VALIDATION.md` e `FETCH_FIX.md`.
 
@@ -99,7 +99,7 @@ Capturas locais da revisão visual: `artifacts/template12/template-interface.jpg
 No Windows:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File C:\repos\simpliFAQ\scripts\Start-SimplFAQ.ps1
+powershell -ExecutionPolicy Bypass -File C:\repos\simpliFAQ\scripts\Start-SimpliFAQ.ps1
 ```
 
 Ou execute `wsl -d AlmaLinux-10 -- bash /mnt/c/repos/simpliFAQ/scripts/start.sh` e abra **http://localhost:8080**. A configuração efetiva é externa: `~/.config/simplfaq/app.env`. Não a inclua no Git. A POC usa autenticação local apenas em desenvolvimento e publica somente loopback.

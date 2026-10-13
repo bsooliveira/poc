@@ -1,5 +1,5 @@
 [Unit]
-Description=SimplFAQ - interface React e proxy Nginx
+Description=SimpliFAQ - interface React e proxy Nginx
 Requires=simplfaq-api.service
 After=simplfaq-api.service
 

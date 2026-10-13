@@ -28,8 +28,8 @@ def document_bytes(event):
     no_border.append(bottom)
     title_style.append(no_border)
     doc.core_properties.title = event["name"]
-    doc.core_properties.author = "SimplFAQ"
-    doc.add_heading("SimplFAQ", 0)
+    doc.core_properties.author = "SimpliFAQ"
+    doc.add_heading("SimpliFAQ", 0)
     doc.add_heading(event["name"], 1)
     approved = event["status"] == "approved"
     doc.add_paragraph(
@@ -151,7 +151,7 @@ def document_bytes(event):
         )
     section.footer.paragraphs[
         0
-    ].text = "SimplFAQ · Documento com rastreabilidade às fontes · Uso interno"
+    ].text = "SimpliFAQ · Documento com rastreabilidade às fontes · Uso interno"
     output = io.BytesIO()
     doc.save(output)
     return output.getvalue()

@@ -1,4 +1,4 @@
-# SimplFAQ — Arquitetura Conceitual
+# SimpliFAQ — Arquitetura Conceitual
 
 ## Premissa
 O MVP deve operar nas VMs corporativas já existentes de pré-produção e produção, sem depender da criação de novos recursos Azure.

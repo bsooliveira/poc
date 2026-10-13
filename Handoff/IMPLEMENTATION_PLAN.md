@@ -1,4 +1,4 @@
-# SimplFAQ — Plano de Implementação do MVP
+# SimpliFAQ — Plano de Implementação do MVP
 
 ## Marco 0 — Fundação
 Critério de pronto:

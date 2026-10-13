@@ -1,4 +1,4 @@
-# Entrega da POC SimplFAQ — 12 de outubro de 2026
+# Entrega da POC SimpliFAQ — 12 de outubro de 2026
 
 Este documento registra a primeira entrega. A versão incremental posterior, com template de 12 seções, manuais públicos e regressão dos 34 testes existentes, está em [INCREMENTAL_REPORT.md](INCREMENTAL_REPORT.md). As contagens e limites abaixo são históricos dessa primeira entrega.
 

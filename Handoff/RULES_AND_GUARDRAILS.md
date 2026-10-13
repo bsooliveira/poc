@@ -1,4 +1,4 @@
-# SimplFAQ — Regras e Guardrails
+# SimpliFAQ — Regras e Guardrails
 
 ## Regras de negócio
 - Cada domínio deve responder apenas ao seu escopo.

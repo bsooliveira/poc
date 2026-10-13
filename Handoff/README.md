@@ -1,6 +1,6 @@
-# SimplFAQ Cursor Handoff
+# SimpliFAQ Cursor Handoff
 
-Pacote consolidado para implementar o SimplFAQ no Cursor com o mínimo de recontextualização possível.
+Pacote consolidado para implementar o SimpliFAQ no Cursor com o mínimo de recontextualização possível.
 
 ## Comece aqui
 **Leia primeiro `00_START_HERE.md`.** Ele contém as decisões fechadas, as proibições do MVP e a estratégia para reduzir consumo de contexto/créditos no Cursor.
@@ -31,7 +31,7 @@ Pacote consolidado para implementar o SimplFAQ no Cursor com o mínimo de recont
 Não é necessário reler todos os arquivos para cada tarefa. Consulte somente o documento relacionado ao trabalho atual.
 
 ## Apresentação visual
-Abra `SIMPLFAQ_APRESENTACAO.html` no navegador para uma visão navegável do produto, fluxo e arquitetura.
+Abra `SIMPLIFAQ_APRESENTACAO.html` no navegador para uma visão navegável do produto, fluxo e arquitetura.
 
 ## Segurança
 Este pacote não contém credenciais, tokens, segredos ou dados reais de eventos.

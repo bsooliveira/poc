@@ -49,7 +49,7 @@ async def lifespan(app):
 
 
 app = FastAPI(
-    title="SimplFAQ",
+    title="SimpliFAQ",
     version="1.0.0",
     lifespan=lifespan,
     docs_url=None,
@@ -728,7 +728,7 @@ def download_document(event_id: str, user=Depends(identity)):
     if not event["result"]:
         raise HTTPException(409, "Gere uma FAQ antes de exportar")
     data = document_bytes(event)
-    filename = f"simplfaq-{event_id}-v{event['version']}.docx"
+    filename = f"simplifaq-{event_id}-v{event['version']}.docx"
     path = settings().data_dir / "documents" / filename
     path.write_bytes(data)
     with database(True) as db:
@@ -862,7 +862,7 @@ def training_dataset(user=Depends(identity)):
         "\n".join(dumps(r) for r in data) + "\n",
         media_type="application/x-ndjson",
         headers={
-            "Content-Disposition": 'attachment; filename="simplfaq-approved.jsonl"'
+            "Content-Disposition": 'attachment; filename="simplifaq-approved.jsonl"'
         },
     )
 
@@ -892,5 +892,5 @@ def training_artifact(training_id: str, user=Depends(identity)):
         audit(db, user["id"], "training.adapter_downloaded", training_id=training_id)
     return FileResponse(
         settings().data_dir / "training" / training_id / "adapter.zip",
-        filename=f"simplfaq-lora-{training_id}.zip",
+        filename=f"simplifaq-lora-{training_id}.zip",
     )

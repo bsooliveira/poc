@@ -1,5 +1,5 @@
 [Unit]
-Description=SimplFAQ - modelos locais Ollama
+Description=SimpliFAQ - modelos locais Ollama
 
 [Container]
 Image=docker.io/ollama/ollama:0.18.0

@@ -13,7 +13,7 @@ test('a failed event read is actionable and a new attempt can recover', async t 
     if (calls === 1) throw new TypeError('Failed to fetch')
     return Response.json({ id: 'fictitious-event', result: { items: [] } })
   })
-  await assert.rejects(api('/events/fictitious-event'), /Verifique se o SimplFAQ está em execução/)
+  await assert.rejects(api('/events/fictitious-event'), /Verifique se o SimpliFAQ está em execução/)
   assert.equal((await api('/events/fictitious-event')).id, 'fictitious-event')
   assert.equal(calls, 2)
 })

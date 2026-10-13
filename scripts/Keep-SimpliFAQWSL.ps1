@@ -5,6 +5,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $wslExecutable = Join-Path $env:WINDIR 'System32\wsl.exe'
+# Preserve the installed session state so a rename does not start a duplicate WSL process.
 $stateDirectory = Join-Path $env:LOCALAPPDATA 'SimplFAQ'
 $statePath = Join-Path $stateDirectory 'wsl-session.json'
 if (Test-Path -LiteralPath $statePath) {

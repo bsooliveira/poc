@@ -1,8 +1,14 @@
-# SimplFAQ · POC local
+# SimpliFAQ · POC local
 
 Aplicação completa de FAQs bilíngues, executada com **Podman rootless + Quadlet/systemd no AlmaLinux-10 do WSL**. React/TypeScript/Vite, FastAPI, Nginx e modelos locais. Sem dependência corporativa para usar a POC.
 
 **Acesse: http://localhost:8080**
+
+## Nome do projeto e compatibilidade
+
+O nome oficial é **SimpliFAQ**, usado na interface, API, documentação, apresentação e documentos exportados. A apresentação está em `Handoff/SIMPLIFAQ_APRESENTACAO.html`; o iniciador Windows é `scripts/Start-SimpliFAQ.ps1`.
+
+Identificadores técnicos já instalados conservam o prefixo `simplfaq` para manter compatibilidade: containers, imagens, serviços, rede, volumes, `simplfaq.db`, configuração em `~/.config/simplfaq`, backups, chave de sessão do navegador e versões históricas de prompts. O cabeçalho de acesso local `X-SimplFAQ` e o estado da sessão WSL em `%LOCALAPPDATA%\SimplFAQ` também permanecem compatíveis. Esses identificadores não definem a grafia da marca. Renomeá-los isoladamente pode desconectar dados, configurações, sessões ou clientes existentes; não aplique substituição global a eles.
 
 ## Iniciar e parar
 
@@ -14,7 +20,7 @@ wsl -d AlmaLinux-10 -- bash /mnt/c/repos/simpliFAQ/scripts/status.sh
 wsl -d AlmaLinux-10 -- bash /mnt/c/repos/simpliFAQ/scripts/stop.sh
 ```
 
-O script `scripts/Start-SimplFAQ.ps1` inicia os serviços e abre o site. No WSL, `start.sh` também inicia uma sessão oculta pelo Windows para impedir o encerramento da distribuição por inatividade. O WSL não permanece ligado apenas pelos serviços systemd. `stop.sh` encerra os containers e libera essa sessão em até cinco segundos. Iniciar novamente reutiliza a sessão existente, sem criar processos duplicados. Quadlet inicia os serviços quando a distribuição WSL inicia; o notebook precisa estar ligado. Após reiniciar o Windows, execute o script de início. Os volumes permanecem após parar os containers. Em uma VM Linux comum, essa sessão Windows não é utilizada.
+O script `scripts/Start-SimpliFAQ.ps1` inicia os serviços e abre o site. No WSL, `start.sh` também inicia uma sessão oculta pelo Windows para impedir o encerramento da distribuição por inatividade. O WSL não permanece ligado apenas pelos serviços systemd. `stop.sh` encerra os containers e libera essa sessão em até cinco segundos. Iniciar novamente reutiliza a sessão existente, sem criar processos duplicados. Quadlet inicia os serviços quando a distribuição WSL inicia; o notebook precisa estar ligado. Após reiniciar o Windows, execute o script de início. Os volumes permanecem após parar os containers. Em uma VM Linux comum, essa sessão Windows não é utilizada.
 
 ## Usar a aplicação
 

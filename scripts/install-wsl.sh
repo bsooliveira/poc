@@ -12,4 +12,4 @@ systemctl --user start simplfaq-ollama.service
 podman exec simplfaq-ollama ollama pull qwen2.5:1.5b
 systemctl --user restart simplfaq-api.service simplfaq-web.service
 bash scripts/start.sh
-printf 'SimplFAQ disponível em http://localhost:8080\n'
+printf 'SimpliFAQ disponível em http://localhost:8080\n'

@@ -1,4 +1,4 @@
-# SimplFAQ — Schemas sugeridos
+# SimpliFAQ — Schemas sugeridos
 
 ## EventMetadata
 ```json

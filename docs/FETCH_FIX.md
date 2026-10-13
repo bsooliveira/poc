@@ -12,7 +12,7 @@ A rota correta é `GET /api/events/602267a9-87b1-4ed1-9362-0b48af10c693`. O fron
 
 ## Alterações
 
-- `scripts/start.sh` inicia uma sessão WSL oculta, lançada pelo Windows, além dos serviços. `Keep-SimplFAQWSL.ps1` registra PID e instante de início fora do repositório e reutiliza a sessão existente. `keep-wsl-alive.sh` mantém um processo de usuário ativo.
+- `scripts/start.sh` inicia uma sessão WSL oculta, lançada pelo Windows, além dos serviços. `Keep-SimpliFAQWSL.ps1` registra PID e instante de início fora do repositório e reutiliza a sessão existente. `keep-wsl-alive.sh` mantém um processo de usuário ativo.
 - `scripts/stop.sh` para os containers e sinaliza a saída dessa sessão em até cinco segundos. Nenhum volume é removido. VM Linux comum não utiliza o mecanismo Windows.
 - Instalação, atualização e rollback também passam pelo início comum, garantindo a sessão WSL quando esses comandos forem usados diretamente.
 - `frontend/src/api.ts` traduz falhas de rede para uma mensagem acionável em português. Requisições que escrevem dados não são reenviadas automaticamente.

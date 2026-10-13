@@ -1,9 +1,9 @@
-# SimplFAQ — START HERE (Cursor)
+# SimpliFAQ — START HERE (Cursor)
 
 > Leia este arquivo primeiro. Ele contém as decisões já fechadas. Não reabra essas decisões sem solicitação explícita.
 
 ## Objetivo
-Construir o SimplFAQ: aplicação web interna para gerar uma primeira versão avançada de FAQs/relatórios de perguntas e respostas sobre eventos corporativos, em **português e inglês no mesmo ciclo**, com rastreabilidade e revisão humana obrigatória.
+Construir o SimpliFAQ: aplicação web interna para gerar uma primeira versão avançada de FAQs/relatórios de perguntas e respostas sobre eventos corporativos, em **português e inglês no mesmo ciclo**, com rastreabilidade e revisão humana obrigatória.
 
 ## Stack fechada do MVP
 - Infraestrutura: **VMs corporativas existentes** de pré-produção e produção

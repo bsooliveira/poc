@@ -1,5 +1,5 @@
 [Unit]
-Description=SimplFAQ - API e processamento
+Description=SimpliFAQ - API e processamento
 Requires=simplfaq-ollama.service
 After=simplfaq-ollama.service
 

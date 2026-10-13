@@ -1,11 +1,11 @@
-# SimplFAQ — Cursor Handoff
+# SimpliFAQ — Cursor Handoff
 
 ## 1. Objetivo
-Implementar o **SimplFAQ**, uma solução para automatizar a criação de relatórios/FAQs bilíngues (PT/EN) relacionados a eventos corporativos.
+Implementar o **SimpliFAQ**, uma solução para automatizar a criação de relatórios/FAQs bilíngues (PT/EN) relacionados a eventos corporativos.
 
 Hoje, o processo é executado por várias áreas humanas. Cada área responde perguntas referentes ao seu próprio domínio (por exemplo: Negociação, Garantias, Liquidação etc.), e uma pessoa consolida o material final para envio ao negócio.
 
-O SimplFAQ deve produzir uma primeira versão avançada, rastreável e revisável por humano.
+O SimpliFAQ deve produzir uma primeira versão avançada, rastreável e revisável por humano.
 
 ---
 
@@ -220,7 +220,7 @@ Ao sugerir código:
 ---
 
 ## 12. Definição de sucesso
-O SimplFAQ é bem-sucedido se:
+O SimpliFAQ é bem-sucedido se:
 - cobre os domínios aplicáveis;
 - não inventa fatos;
 - cita evidências;

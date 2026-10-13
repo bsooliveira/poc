@@ -34,7 +34,7 @@ export async function request(path: string, options: RequestInit = {}) {
     response = await fetch('/api' + path, { ...options, headers })
   } catch (error) {
     if (error instanceof Error && error.name === 'AbortError') throw error
-    throw new Error('Não foi possível conectar ao servidor. Verifique se o SimplFAQ está em execução e tente novamente.')
+    throw new Error('Não foi possível conectar ao servidor. Verifique se o SimpliFAQ está em execução e tente novamente.')
   }
   if (!response.ok) {
     const error = await response.json().catch(() => ({ detail: 'Não foi possível acessar o servidor' }))

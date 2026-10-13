@@ -1,4 +1,4 @@
-# SimplFAQ — Backlog inicial
+# SimpliFAQ — Backlog inicial
 
 ## Epic 1 — Ingestão
 - [ ] Upload/entrada de documentos

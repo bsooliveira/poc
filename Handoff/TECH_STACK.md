@@ -1,7 +1,7 @@
-# SimplFAQ — Stack Tecnológica Recomendada
+# SimpliFAQ — Stack Tecnológica Recomendada
 
 ## Contexto
-O SimplFAQ nasce como iniciativa de hackathon com time multifuncional e sem desenvolvedor dedicado. O objetivo é entregar um MVP completo, simples de sustentar e evoluir, reutilizando infraestrutura já existente.
+O SimpliFAQ nasce como iniciativa de hackathon com time multifuncional e sem desenvolvedor dedicado. O objetivo é entregar um MVP completo, simples de sustentar e evoluir, reutilizando infraestrutura já existente.
 
 ## Premissa de infraestrutura
 **Não criar novos recursos Azure como dependência do MVP.**

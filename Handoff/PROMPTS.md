@@ -1,4 +1,4 @@
-# SimplFAQ — Prompts iniciais
+# SimpliFAQ — Prompts iniciais
 
 ## 1. Classificação por domínio
 Objetivo: decidir quais domínios devem participar do evento.
